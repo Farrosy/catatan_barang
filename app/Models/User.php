@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'alamat',
+        'nomortelepon'
     ];
 
     /**
@@ -41,4 +43,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function penjualan()
+    {
+        return $this->hasMay(Penjualan::class);
+    }
 }
